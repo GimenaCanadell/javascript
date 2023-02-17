@@ -74,13 +74,16 @@ nav a:hover {
     font-size: 10px;
     background:rgb(189, 138, 155);
     color: black;  
-    border-radius: 100px;
+    background:rgb(189,138,155);
+    background:rgb(189,138,
+        155);
 }
 body{
     background-color:rgb(185, 15, 72);
    
 }
 .contenedor{
+    min-height: 100vh;
     padding: 100px;
     margin: 30px;
     display: flex;
@@ -120,12 +123,8 @@ table {
       border: 1px solid black;
 
   }
-    
-    
-
-  
-
-   
-    
-   
-
+.card-img-top{
+    height: 200px;
+    object-fit: cover;
+    width: 200px;
+}
