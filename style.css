@@ -39,7 +39,7 @@ a {
 }
 nav a {
     background-color: grey;
-    color:rgb(185, 15, 72);
+    color: rgb(185, 47, 93);
 
     font-weight: 600;
     margin-right: 10px;
@@ -69,17 +69,15 @@ nav a:hover {
  border-radius: 3px;
  
 }
-.btn-enviar{
+.btn-send{
     padding: 10px;
     font-size: 10px;
     background:rgb(189, 138, 155);
     color: black;  
-    background:rgb(189,138,155);
-    background:rgb(189,138,
-        155);
+   
 }
 body{
-    background-color:rgb(185, 15, 72);
+    background-color:rgb(185, 47, 93);
    
 }
 .contenedor{
@@ -108,7 +106,7 @@ table {
 }
    @media(max-width:768px) {
        table {
-           margin: 10px;
+           margin: 5px;
 
        }
 
