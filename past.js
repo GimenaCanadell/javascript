@@ -1,5 +1,14 @@
-let data= {
- 
+let template=(image,title,description)=>{
+  return`
+        <div class="card" style="width: 18rem;">
+          <img src="${element.image}" class="card-img-top" alt="..."></img><div class="card-body">
+            <h5 class="card-title">${element.title}</h5>
+            <p class="card-text">${element.description}</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+          </div>`
+}
+let datos = {
  
     "currentDate": "2022-01-01",
     "events": [
@@ -172,31 +181,25 @@ let data= {
         "price":250
       }
     ]
+  }     
+  function printPastEvents(){
+    let events=datos.events;
+
+    let currentDte=datos.currentDate;
+
+    let templates=[]
+
+    for(letelement of events){
+        if(element.date>currentDate){
+templates.push(template(element.image,element.title,element.description))
+        }
+
+
+}
+
+
+
+
+
   }
-
-const events=data.events
-
-
-
-let allEvents=[]
-function printCards(){
-for(let one of events){
-let card=`
-        <div class="card" style="width: 18rem;">
-          <img src="${one.image}" class="card-img-top" alt="..."></img><div class="card-body">
-            <h5 class="card-title">${one.title}</h5>
-            <p class="card-text">${one.description}</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-          </div>`
-
-
-allEvents.push(card);
-console.log(allEvents)
-}
-
-let cardEvents=document.getElementById('contenedor');
-cardEvents.innerHTML=allEvents.join('')
-
-}
-printCards()
+  
