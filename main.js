@@ -192,11 +192,12 @@ let card=`
 
 
 allEvents.push(card);
-console.log(allEvents)
-}
 
-let cardEvents=document.getElementById('contenedor');
+}
+console.log(allEvents)
+let cardEvents=document.getElementById('contain');
 cardEvents.innerHTML=allEvents.join('')
 
 }
 printCards()
+
