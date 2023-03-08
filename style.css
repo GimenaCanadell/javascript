@@ -69,11 +69,13 @@ nav a:hover {
  border-radius: 3px;
  
 }
-.btn-send{
+.btn-search{
     padding: 10px;
     font-size: 10px;
-    background:rgb(189, 138, 155);
-    color: black;  
+    background:white;
+    color: black;
+    border-radius: 75px; 
+
    
 }
 body{
@@ -126,6 +128,8 @@ table {
     object-fit: cover;
     width: 200px;
     
-  
-    
+}
+.carousel {
+height: 10px;
+width: 100px;
 }

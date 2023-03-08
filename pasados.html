@@ -16,32 +16,38 @@
         <img src="./img/logo.png" alt="">
       </div>  
 
-        <nav>
+         <nav>
         <a href="./index.html">HOME</a>
         <a href="./nuevo.html">NEW</a>
         <a href="./pasados.html">PAST</a>
         <a href="./stats.html">STATS</a>
         <a href="./contact.html">CONTACT</a>
         </nav>
+
     </header> 
      <main>
- <form>
+<fieldset id="id_filter">
+ <label class="contact-label" for="category1">Food Fair</label>
+ <input class="class_checks" type="checkbox" name="category" id="id_search" value="category" >
+ <label class="contact-label"  for="category2">Museum</label>
+<input class="class_checks"  type="checkbox" name="category" id="id_search" value="category" >  
+ <label class="contact-label"  for="category3">Costume Party</label>
+<input class="class_checks" type="checkbox" name="category" id="id_search" value="category" >  
+<label  class="contact-label"for="category4">Music Concert</label>
+<input class="class_checks"  type="checkbox" name="category" id="id_search" value="category" >
+<label class="contact-label" for="category1">Race</label>
+ <input class="class_checks" type="checkbox" name="category" id="id_search"value="category" >
+ <label for="category2">Book Exchange</label>
+<input class="class_checks" type="checkbox" name="category" id="id_search"value="category" >  
+ <label class="contact-label" for="category3">Cinema</label> 
 
-
-<label for="category1">category</label>
-          <input type="checkbox" name="category1" id="category1" value="category1" >
- <label for="category2">category</label>
-          <input type="checkbox" name="category2" id="category2" value="category2" >  
- <label for="category3">category</label>
-          <input type="checkbox" name="category3" id="category3" value="category3" >  
-<label for="category4">category</label>
-          <input type="checkbox" name="category4" id="category4" value="category4" > 
-<input type="submit"  name="end" value="send" class="btn-send">
-
-
- </form>
+ <input class="class_checks"  type="checkbox" name="category" id="id_search" value="category" >  
+<form class="d-flex" role="buscar">
+<input class="class_checks" type="search" placeholder="Search" aria-label="Buscar">
+<button class="btn btn-outline-success" type="submit">send</button ></form> -->
+</fieldset>
     </main> 
-  <section id="con" >
+  <div class="contenedor" id="con">
   <!-- <div class="card text-white bg-secondary mb-3" style="width: 20rem;">
   <img src="./img/Cinema.jpg" class="card-img-top" alt="...">
    <div class="card-body">
@@ -98,8 +104,11 @@
 </div>
  
 <script src="data.js"></script>
- <script src="past.js"></script>
+<script src="main.js"></script>
+<script src="past.js"></script>
+<script src="checksEvents.js"></script>
+<script src="filter.js"></script>
 </body>
   
 </html>
-
+dnispn
