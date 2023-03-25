@@ -1,118 +1,42 @@
 <!DOCTYPE html>
-<html lang="en"> 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-  
-    <link rel="stylesheet" href="./style.css">
-    
-   
-   
-    <title>Document</title>
-</head>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
 
-<body> 
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Document</title>
+  </head>
+
+  <body>
     <header>
       <div class="logo">
-         <img src="./img/logo.png" alt="">
-       
-      </div>  
-         <nav>
+        <img src="./img/logo.png" alt="" />
+      </div>
+      <nav>
         <a href="./index.html">HOME</a>
         <a href="./nuevo.html">NEW</a>
         <a href="./pasados.html">PAST</a>
         <a href="./stats.html">STATS</a>
         <a href="./contact.html">CONTACT</a>
-        </nav>
+      </nav>
+    </header>
 
-    </header> 
-   
     <main>
+      <section>
+        <div class="contenedor" id="detail"></div>
+      </section>
+    </main>
 
-
-
-<fieldset id="id_filter">
-<!-- <label class="contact-label" for="category1">Food Fair</label>
- <input class="class_checks" type="checkbox" name="category" id="id_search" value="category" >
- <label class="contact-label"  for="category2">Museum</label>
-<input class="class_checks"  type="checkbox" name="category" id="id_search" value="category" >  
- <label class="contact-label"  for="category3">Costume Party</label>
-<input class="class_checks" type="checkbox" name="category" id="id_search" value="category" >  
-<label  class="contact-label"for="category4">Music Concert</label>
-<input class="class_checks"  type="checkbox" name="category" id="id_search" value="category" >
-<label class="contact-label" for="category1">Race</label>
- <input class="class_checks" type="checkbox" name="category" id="id_search"value="category" >
- <label for="category2">Book Exchange</label>
-<input class="class_checks" type="checkbox" name="category" id="id_search"value="category" >  
- <label class="contact-label" for="category3">Cinema</label> 
-
- <input class="class_checks"  type="checkbox" name="category" id="id_search" value="category" >  
-<form class="d-flex" role="buscar">
-<input class="class_checks" type="search" placeholder="Search" aria-label="Buscar">
-<button class="btn btn-outline-success" type="submit">send</button ></form> -->
-</fieldset>
-
-    </main>  
-  <section   > 
-     <div class="contenedor"id ="contain">
-   <!-- <div class="card text-white bg-secondary mb-3" style="width: 20rem;">
-  <img src="./img/Cinema.jpg" class="card-img-top" alt="...">
-   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="./pasados.html" class="btn btn-primary">view event</a>
-  </div>
-  </div>
-  <div class="card text-white bg-secondary mb-3" style="width: 20rem;">
-  <img src="./img/Costume_Party.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="./pasados.html" class="btn btn-primary">view event</a>
-  </div>
-   </div>
-<div class="card text-white bg-secondary mb-3" style="width: 20rem;">
-  <img src="./img/Food_Fair.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="./pasados.html" class="btn btn-primary">view event</a>
-  </div>
-</div>
-<div class="card text-white bg-secondary mb-3" style="width: 20rem;">
-  <img src="./img/Marathon.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="/pasados.html" class="btn btn-primary">view event</a>
-  </div>
-</div>
-<div class="card text-white bg-secondary mb-3" style="width: 20rem;">
-  <img src="./img/Museum_Tour.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="./pasados.html" class="btn btn-primary">view event</a>
-  </div>
-</div>
-<div class="card text-white bg-secondary mb-3" style="width: 20rem;">
-  <img src="./img/Music_Concert.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="./pasados.html" class="btn btn-primary">view event</a>
-  </div>
-</div>
-</div>
-</section> -->
-<script src="data.js"></script>
-<script src="main.js"></script>
-<script src="checksEvents.js"></script>
-<script src="filter.js"></script>
-
-
-
+    <script src="data.js"></script>
+    <script src="detailCard.js"></script>
   </body>
 </html>

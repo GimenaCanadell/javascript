@@ -1,130 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
     <title>Document</title>
-</head>
+  </head>
 
-<body> 
+  <body>
     <header>
-        
-     <div class="logo">
-         <img src="./img/logo.png" alt="">
-      </div> 
-   <nav>
+      <div class="logo">
+        <img src="./img/logo.png" alt="" />
+      </div>
+      <nav>
         <a href="./index.html">HOME</a>
         <a href="./nuevo.html">NEW</a>
         <a href="./pasados.html">PAST</a>
         <a href="./stats.html">STATS</a>
         <a href="./contact.html">CONTACT</a>
-        </nav>
-      
-        
-     </header>
-
-     <table>
-      <thead>
-        <tr>
-          <th>EVENTS STATISSTICS</th>
-          <th></th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Events with the highest percentage of attendance</td>
-          <td>Events with the lowest percentage of attendance</td>
-          <td>Events with larger capacity</td>
-          
-        </tr>
-        <tr>
-          <td>.</td>
-          <td>.</td>
-          <td>.</td>
-        </tr>
-        <tr>
-         
-          <td>.</td>
-          <td>.</td>
-          <td>.</td>
-        </tr>
-        <tr>
-          <th>UPCOMING EVENTS STATISTICS BY CATEGORY</th>
-          <th></th>
-          <th></th>
-        </tr>
-
-        <tr>
-        
-          <td>Categories</td>
-          <td>revenues</td>
-          <td>Percentage of attendance</td>
-        </tr>
-        <tr>
-          <td>.</td>
-          <td>.</td>
-          <td>.</td>
-        </tr>
-        <tr>
-         
-          <td>.</td>
-          <td>.</td>
-          <td>.</td>
-        </tr>
-        <tr>
-          <td>.</td>
-          <td>.</td>
-          <td>.</td>
-        </tr>
-        <tr>
-      
-          <th>PAST EVENTS STATISTICS BY CATEGORY</th>
-          <th></th>
-          <th></th>
-        </tr>
-         <tr>
-        
-          <td>Categories</td>
-          <td>revenues</td>
-          <td>Percentage of attendance</td>
-        </tr>
-         <tr>
-        
-          <td>.</td>
-          <td>.</td>
-          <td>.</td>
-        </tr>
-         <tr>
-        
-          <td>.</td>
-          <td>.</td>
-          <td>.</td>
-        </tr>
-         <tr>
-        
-          <td>.</td>
-          <td>.</td>
-          <td>.</td>
-        </tr>
-         <tr>
-        
-          <td>.</td>
-          <td>.</td>
-          <td>.</td>
-        </tr>
-         <tr>
-        
-          <td>.</td>
-          <td>.</td>
-          <td>.</td>
-        </tr>
-      </tbody>
-    </table>
+      </nav>
+    </header>
 
    
+		<div class="album py-5 back-cards" >
+
+			<div class="container-sm w-80">
+				<article class="my-3">
+					<h2>Events</h2>
+				
+					<div class="bd-example-snippet bd-code-snippet">
+						<div class="bd-example">
+							<table class="table table-bordered border-info table-hover table-secondary text-center">
+								<thead>
+									<tr class="table-style-3">
+										<th scope="col" COLSPAN="3" class="text-uppercase text-center">Events statics</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="table-info table-style-3">
+										<td>Events width the highest percentage of attendance</td>
+										<td>Events width the lowest percentage of attendance</td>
+										<td>Events width larger capacity</td>
+									</tr>
+									<tr class="table-light table-style-3 text-center">
+										<td  id="tablaMayorAsistencia">... </td>
+										<td  id="tablaMenorAsistencia">... </td>
+										<td id="tablaCapacity"></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</article>
+			</div>
+			<div class="container-sm w-80">
+				<article class="my-3">
+					<h2>Upcoming Events</h2>
+
+
+				
+
+					<div class="bd-example-snippet bd-code-snippet">
+						<div class="bd-example">
+							<table class="table table-bordered border-secondary table-hover table-dark">
+								<thead>
+									<tr class="table-style-2">
+										<th scope="col" COLSPAN="3" class=".text-secondary text-center">UPCOMING EVENTS STATICS BY
+											CATEGORY</th>
+									</tr>
+									<tr class="text-center">
+										<td>Category</td>
+										<td>Revenues</td>
+										<td>Percentajes of attendance</td>
+									</tr>
+
+								</thead>
+								<tbody id=UpcomingTabla  class="text-center" >
+									
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</article>
+			</div>
+			<div class="container-sm w-80">
+				<article class="my-3">
+					<h2>Past Events</h2>
+
+					
+				
+					<div class="bd-example-snippet bd-code-snippet">
+						<div class="bd-example">
+							<table class="table table-bordered border-secondary table-hover table-dark">
+								<thead>
+									<tr class="table-style">
+										<th scope="col" COLSPAN="3" class="text-uppercase text-center">PAST EVENTS STATICS BY
+											CATEGORY
+										</th>
+									</tr>
+									<tr class="table-success table-style text-center">
+										<td>Category</td>
+										<td>Revenues</td>
+										<td>Percentajes of attendance</td>
+									</tr>
+								</thead>
+								<tbody id="tablePast" class="text-center">
+								
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</article>
+			</div>
+
+		</div>
+
+	</main>
+    <script src="main.js"></script>
+    <script src="tablas.js"></script>
   </body>
 </html>

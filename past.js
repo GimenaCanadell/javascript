@@ -9,11 +9,10 @@ let template = (image, name, description) => {
           </div>`;
 };
 
-
 function printPastEvents() {
-  let events = datos.events;
+  let events = events;
 
-  let currentDate = datos.currentDate;
+  let currentDate = currentDate;
 
   let templates = [];
 
@@ -22,9 +21,21 @@ function printPastEvents() {
       templates.push(template(one.image, one.name, one.description));
     }
 
-    let selector = document.getElementById("con");
+    let selector = document.getElementById("cont");
     selector.innerHTML = templates.join("");
   }
 }
-
-printPastEvents();
+  // printPastEvents()
+async function fetchApi() {
+  try {
+    let urlApi = "https://api-amazingevents.onrender.com/api/amazing-events?time=past";
+    let fetchResponse = await fetch(urlApi);
+    console.log(fetchResponse);
+    let response = await fetchResponse.json();
+    console.log(response);
+    printTemplate(response.events,"cont");
+  } catch (error) {
+    console.log(error);
+  }
+}
+fetchApi();

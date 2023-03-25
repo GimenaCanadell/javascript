@@ -10,9 +10,9 @@ let template = (image, name, description) => {
 };
 
 function printNewEvents() {
-  let events = datos.events;
+  let events = events;
 
-  let currentDate = datos.currentDate;
+  let currentDate = currentDate;
 
   let templates = [];
 
@@ -25,6 +25,18 @@ function printNewEvents() {
     selector.innerHTML = templates.join("");
   }
 }
-printNewEvents();
-
-
+// printNewEvents()
+async function fetchApi() {
+  try {
+    let urlApi =
+      "https://api-amazingevents.onrender.com/api/amazing-events?time=new";
+    let fetchResponse = await fetch(urlApi);
+    console.log(fetchResponse);
+    let response = await fetchResponse.json();
+    console.log(response);
+    printTemplate(response.events, "conta");
+  } catch (error) {
+    console.log(error);
+  }
+}
+fetchApi();
