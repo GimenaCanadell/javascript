@@ -1,16 +1,15 @@
 async function fetchApi(){
 	try{
 		let urlApi ="https://api-amazingevents.onrender.com/api/amazing-events";
-		let fetchResponse = await fetch(urlApi)//se espera la respuesta 
-		//console.log(fetchResponse)
+		let fetchResponse = await fetch(urlApi)
+		
 
-		let response = await fetchResponse.json()//se espera la transformación
-		//console.log(response)
+		let response = await fetchResponse.json()
+		
 		
 		let datosTabla = response.events
 		
-		//console.log(datosTabla)
-		//printDetails(datostabla)
+		
 
 		printmayorCapacidad(datosTabla)
 		percentajeOfAttendance(response)
@@ -23,10 +22,6 @@ async function fetchApi(){
 	}
 }
 fetchApi()
-//eventos con mayor porcentaje de asistencia--->>>> Events width the highest percentage of attendance
-// se debe calcular los porcentajes en base a la capacidad - usar regla de tres simple
-//al hacerlo se determina cuál es el que tiene el mayor y el menor porcentaje
-//mayor porcentaje de asistencia
 
 function percentajeOfAttendance(response){
 	let currentDate =response.currentDate
@@ -46,29 +41,27 @@ function percentajeOfAttendance(response){
 								
 							
 									resultado.push(objetoTemporal)
-									//console.log(objetoTemporal)
+									
 								
 		
 						}	
 						
 					})
-					//console.log(resultado)
+					
 					sortedPorcentaje(resultado)
 					return resultado
 	}
 
 
 function sortedPorcentaje(resultado) {
-	//console.log(resultado)
+	
 	let sorted = [...resultado].sort((e1,e2)=> e1.porcentaje- e2.porcentaje)
-	//console.log(sorted)
-
-	//console.log(sorted[sorted.length-1].nombre + "  con porcentaje de  "+ sorted[sorted.length-1].porcentaje)
-
+	
+	
 	let mayorAsistencia = sorted[sorted.length-1].nombre
 
 
-	//console.log(sorted[0].nombre + "  con menor  porcentaje de asistencia  "+ sorted[0].porcentaje)
+	
 
 
 let menorAsistencia = sorted[0].nombre
@@ -87,17 +80,11 @@ function printTablaPorcentajeAsistencia(mayorAsistencia, menorAsistencia){
 	contenedorDetalle2.innerHTML =  `${menorAsistencia}`
 }
 
-//evento con menor porcentaje de audiencia
-
-// evento con mayor capacidad 
 
 
 function printmayorCapacidad(datosTabla){
 
 	let mayorCapacidad = [...datosTabla].sort((cap1,cap2) => cap1.capacity-cap2.capacity)
-//console.log("la categoría es: "+ mayorCapacidad[mayorCapacidad.length-1].category+ "con una capacidad total de: "+  mayorCapacidad[mayorCapacidad.length-1].capacity )
-
-//console.log(mayorCapacidad[mayorCapacidad.length-1].name)
 
 let nombreEvento = mayorCapacidad[mayorCapacidad.length-1].name
 
@@ -113,7 +100,6 @@ function printDetails(nombreEvento){
 }
 
 
-// & upcoming events genera datos para tabla de categoría, ganancia, porcentaje de asistencia 
 
 function porcentajeUpcoming(response){
 	let currentDate =response.currentDate
@@ -147,9 +133,9 @@ function porcentajeUpcoming(response){
 
 
 					
-					/* imprimirTablaUpcoming(resultadoUpcoming) */
+				
 					filtroCategorias(categoriaUpcoming,resultadoUpcoming)
-					/* printCardsUpcoming("#UpcomingTabla", resultadoUpcoming) */
+					
 				
 
 					return resultadoUpcoming
@@ -158,10 +144,10 @@ function porcentajeUpcoming(response){
 function filtroCategorias(categoriaUpcoming,resultadoUpcoming) {
 	let categoriasUnicas = Array.from(new Set(categoriaUpcoming)) 
 
-	//console.log(categoriasUnicas)
+	
 	let eventsByCategory = categoriasUnicas.map(eventCat => resultadoUpcoming.filter(each => each.categoria === eventCat))
 
-	//console.log(eventsByCategory)
+	
 	reduceUpcoming(eventsByCategory)
     return eventsByCategory
 
@@ -214,11 +200,11 @@ function filtroCategorias(categoriaUpcoming,resultadoUpcoming) {
 
 			}))
 				
-			//console.log(html)
+		
 		
 			contenedorTabla2.innerHTML =  html 
 	}
-//?Past Events categoría ganancia porcentaje de asistencia
+
  
 
 function porcentajePast(response){
@@ -253,9 +239,9 @@ function porcentajePast(response){
 
 
 					
-					/* imprimirTablaUpcoming(resultadoPast) */
+			
 					filtroCategoriasPast(categoriaPast,resultadoPast)
-					/* printCardsPast("#UpcomingTabla", resultadoPast) */
+					
 				
 
 					return resultadoPast
@@ -320,7 +306,7 @@ function filtroCategoriasPast(categoriaPast,resultadoPast) {
 
 			}))
 				
-			//console.log(html)
+		
 		
 			contenedorTabla3.innerHTML =  html 
 	}

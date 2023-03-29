@@ -1,40 +1,56 @@
 // const events = datos.events;
 
-function printCards(array) {
-  let allEvents = [];
+let cards = []
 
-  for (let one of array) {
-    let card = `
-        <div class="card"style="width: 18rem;">
-          <img src="${one.image}"  class="card-img-top  alt="..."></img><div class="card-body" d-flexflex-wrap justify-content-between algin-items-center>
-            <h5 class="card-title">${one.name}</h5>
-            <p class="card-text">${one.description}</p>
-            <a href="./detail.html?id=${one._id}" class="btn btn-primary">see more</a>
-          </div>
-          </div>`;
 
-    allEvents.push(card);
-  }
-  return allEvents;
+
+function defineTemplateCard(cards){
+	return `
+	<div class="col">
+	<div class="card shadow-sm">
+			<figure class="figure">
+					<img src="${cards.image}" alt="${cards.name}"  class="bd-placeholder-img card-img-top tamanioFoto">
+			</figure>
+		<div class="card-body">
+				<h1 class="d-flex flex-wrap justify-content-center font-title">${cards.name}</h1>
+				<p class="card-text font-paragraph">${cards.description}</p>
+				<div class="d-flex justify-content-between align-items-center">
+						<small class="text-muted fs-6">Price $${cards.price}</small>
+						<button class="button-color" id="boton">
+						<a href="./details.html?id=${cards.id}&nombre=${cards.name}"   class="nav-link btn btn-sm text-light button-color">Ver mas</a>
+						</button>
+				</div>
+		</div>
+	</div>
+</div>`;
 }
-function printTemplate(array, x) {
-  let cardEvents = document.getElementById(x);
-  let template = printCards(array);
-  cardEvents.innerHTML = template.join("");
+
+function printCards(id_etiqueta, array){
+	let container = document.querySelector(id_etiqueta)
+	array = array.map(defineTemplateCard)
+	container.innerHTML = array.join('')
 }
 
-// printTemplate(events, "contain");
 
-async function fetchApi() {
-  try {
-    let urlApi = "https://api-amazingevents.onrender.com/api/amazing-events";
-    let fetchResponse = await fetch(urlApi);
-    console.log(fetchResponse);
-    let response = await fetchResponse.json();
-    console.log(response);
-    printTemplate(response.events, "contain");
-  } catch (error) {
-    console.log(error);
-  }
+
+
+async function fetchApi(){
+	try{
+		let urlApi = "https://api-amazingevents.onrender.com/api/amazing-events"
+		let fetchResponse = await fetch(urlApi) 
+			
+		let response = await fetchResponse.json()
+
+		let datos = response.events
+		
+
+		printCards('#cardContainer', datos)
+
+
+	} catch(error){
+		console.log("ocurrio un error ")
+		console.log(error)
+	}
+
 }
-fetchApi();
+fetchApi()

@@ -1,41 +1,54 @@
-let query = location.search;
-console.log(query);
-let params = new URLSearchParams(query);
-console.log(params);
-let id_query = params.get("id");
-console.log(id_query);
 
-const events = datos.events;
+async function fetchApi(){
+	try{
+		let urlApi = "https://api-amazingevents.onrender.com/api/amazing-events";
+		let fetchResponse = await fetch(urlApi)
 
-function defineDetails(one) {
-  return `
-        <div class="card"style="width: 18rem;"id="card">
-            <img src="${one.image}"d-flex flex-wrap justify-content-evenly  class="card-img-top  alt="..."></img><div class="card-body" d-flex flex-wrap justify-content-evenly>
-            <h5 class="card-title">${one.name}</h5>
-            <p class="card-text">${one.description}</p>
-            <a href=""class="btn btn-primary">See more...</a>
 
-          </div>
-          </div>`;
+		let response = await fetchResponse.json()
+	
+		let datos = response.events
+		
+		
+		printDetails(datos)
+		
+	} catch(error){
+		console.log("ocurrio un error que diosito lo ayude")
+		console.log(error)
+	}
 }
-function printCards() {
-  let container = document.querySelector("#detail");
-  evento = events.find((each) => each._id == id_query);
-  let details = defineDetails(evento);
-  console.log(details);
-  container.innerHTML = details;
+fetchApi()
+
+
+
+
+
+function printDetails(datos){
+	
+			
+	 		const queryString = location.search
+	 		const params = new URLSearchParams(queryString)
+	 		const id = params.get("id")
+	 	
+			const detalle = datos.find(each => each.id == id)
+						
+			const contenedorDetalle = document.querySelector("#detail")
+						
+			contenedorDetalle.innerHTML =  `
+			<div class="row flex-lg-row-reverse align-items-center g-2 py-2 ">
+			<div class="col-12  col-lg-6  align-items-center">
+			<img src="${detalle.image}" class="d-block mx-lg-auto img-fluid sombreado" alt="${detalle.name}"
+				width="700" height="500" loading="lazy">
+		</div>
+		<div class="col-lg-6">
+			<h1 class="display-6 lh-1 mb-3 title-center d-md-flex justify-content-md-center">${detalle.name}</h1>
+			<p class="lead text-start  fst-italic m-1"><strong>Date:</strong> ${detalle.date}</p>
+			<p class="lead title-center  fw-bolder fst-italic colorDescription">${detalle.description}</p>
+			<p class="lead text-center fst-italic"><strong>Category: </strong>${detalle.category}    <strong>Place: </strong>${detalle.place} </p>
+			<p class="lead text-center"><strong>Price: $</strong>${detalle.price}</p>
+		</div>
+	</div>
+	`
 }
 
-async function fetchApi() {
-  try {
-    let urlApi = "https://api-amazingevents.onrender.com/api/amazing-events";
-    let fetchResponse = await fetch(urlApi);
-    console.log(fetchResponse);
-    let response = await fetchResponse.json();
-    console.log(response);
-    printTemplate(response.events, "#detail");
-  } catch (error) {
-    console.log(error);
-  }
-}
-fetchApi();
+

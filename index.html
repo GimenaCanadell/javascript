@@ -29,10 +29,44 @@
         <a href="./contact.html">CONTACT</a>
       </nav>
     </header>
+   <div class="contenedor" id="contain">
+		<!-- & inicio de barra de busqueda con los filtros en checkbox -->
+		<div class="navbar-text navbar-expand-sm  bg-ligth fondo-categorys" >
+			<div class="container-xl d-flex flex-wrap  justify-content-evenly align-items-center" >
+				<!-- *contenedor que recibe las CATEGORIAS de forma DINAMICA -->
+				<div>
+					<article class="d-flex flex-wrap justify-content-evenly" id="table_checks"></article>
+					
+					<article class="d-flex flex-wrap justify-content-evenly" id="table_container"></article>
 
-    <fieldset id="id_filter"></fieldset>
+				</div>
+			</div>
+		</div>
+		<!-- * seccion de eventos  -->
+		<div class="album py-5 back-cards">
+			<div class="container">
+				<!-- <article class="d-flex flex-wrap justify-content-evenly" id="resultado_busqueda"></article> -->
+				<article class="row row-cols-1 row-cols-sm-4 row-cols-md-4 g-4" id="resultado_busqueda"></article>
+				<!-- *genera  EVENTOS de forma dinamica con los checks de búsqueda -->
+				<div class="row row-cols-1 row-cols-sm-4 row-cols-md-4 g-4" id="cardContainer">
+					<!-- *genera  EVENTOS de forma dinamica -->
+					</div>
+				</div>
+			</div>
+		</div>
 
-    <div class="contenedor" id="contain"></div>
+
+
+	</main>
+
+
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+		crossorigin="anonymous"></script>
+ 
+
+    </div>
 
     <script src="main.js"></script>
     <script src="checksEvents.js"></script>
